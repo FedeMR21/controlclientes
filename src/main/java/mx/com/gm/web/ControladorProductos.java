@@ -36,23 +36,23 @@ public class ControladorProductos {
     @PostMapping("/guardarProducto")
     public String guardar(@Valid Producto producto, Errors errores) {
         if (errores.hasErrors()) {
-            return "modificar";
+            return "modificarProducto";
         }
         productoService.guardar(producto);
         return "redirect:/product";
     }
 
     @GetMapping("/editarProducto/{idProducto}")
-    public String editar(Producto editarProduct, Model model) {
-        editarProduct = productoService.encontrarProducto(editarProduct);
-        model.addAttribute("editarProduct", editarProduct);
+    public String editar(Producto producto, Model model) {
+        producto = productoService.encontrarProducto(producto);
+        model.addAttribute("producto", producto);
         return "modificarProducto";
     }
 
     @GetMapping("/eliminarProducto")
     public String eliminar(Producto producto) {
         productoService.eliminar(producto);
-        return "redirect:/";
+        return "redirect:/product";
     }
 
 }

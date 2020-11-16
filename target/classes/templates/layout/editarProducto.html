@@ -8,7 +8,7 @@
     </head>
     <body>
         <section th:fragment="editarProducto">
-            <form th:action="@{/guardarProducto}" th:object="${editarProduct}"
+            <form th:action="@{/guardarProducto}" th:object="${producto}"
                   method="POST" class="was-validated">
                 <input type="hidden" name="idProducto" th:field="*{idProducto}"/>
                 <section th:replace="layout/botonesEditarProducto :: botonesEditarProducto"></section>

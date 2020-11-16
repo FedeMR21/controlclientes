@@ -27,37 +27,36 @@
                                             <th></th>
                                         </tr>
                                     </thead>
-                               
-                                
+
+
                                     <tbody>
-                                        
+
                                         <tr th:each="producto, contador : ${totalProductos}">
                                             <td>[[${producto.idProducto}]]</td>
                                             <td>[[${producto.nombre}]]</td>
                                             <td>[[${producto.precio}]]</td>
                                             <td>[[${producto.stock}]]</td>
-                                         
+
                                             <td>
-                                           
+
                                                 <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/editarProducto/} + ${producto.idProducto}"
                                                    class="btn btn-secondary">
                                                     <i class="fas fa-angle-double-right"></i> [[#{accion.editarProducto}]]
                                                 </a>
                                             </td>
-                                
-                                       
+
+
                                             <td>
                                                 <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/eliminarProducto(idProducto=${producto.idProducto})}"
                                                    class="btn btn-dark">
                                                     <i class="fas fa-angle-double-right"></i> [[#{accion.eliminarProducto}]]
                                                 </a>
                                             </td>
-                                        
-                  
+                                    
                                         </tr>
                                     </tbody>
-                                 
-                                 
+
+
                                 </table>
                             </div>
                             <div class="text-center p-2" th:if="${recogiendo == null or recogiendo.empty}">
@@ -66,7 +65,7 @@
                         </div>
                     </div>
 
-                   
+
                 </div>
             </div>
         </section>

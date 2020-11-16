@@ -21,14 +21,14 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     @Transactional
-    public void guardar(Producto persona) {
-        productoDao.save(persona);
+    public void guardar(Producto productos) {
+        productoDao.save(productos);
     }
 
     @Override
     @Transactional
-    public void eliminar(Producto persona) {
-        productoDao.delete(persona);
+    public void eliminar(Producto productos) {
+        productoDao.delete(productos);
     }
 
     @Override
